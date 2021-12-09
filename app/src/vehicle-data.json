@@ -1,0 +1,57 @@
+{
+    "vehicles": [
+        {
+            "name": "Car 1",
+            "register_number": "ABC-123",
+            "fillups": [
+                {
+                    "litres": 123,
+                    "distance_driven": 123,
+                    "total_price": 123
+                },
+                {
+                    "litres": 23,
+                    "distance_driven": 23,
+                    "total_price": 23
+                }
+            ]
+        },
+        {
+            "name": "Car 2",
+            "register_number": "DEF-567",
+            "fillups": [
+                {
+                    "litres": 123,
+                    "distance_driven": 123,
+                    "total_price": 123
+                },
+                {
+                    "litres": 223,
+                    "distance_driven": 223,
+                    "total_price": 223
+                },
+                {
+                    "litres": 53,
+                    "distance_driven": 53,
+                    "total_price": 43
+                }
+            ]
+        },
+        {
+            "name": "Car 3",
+            "register_number": "QWE-987",
+            "fillups": [
+                {
+                    "litres": 40,
+                    "distance_driven": 80,
+                    "total_price": 60
+                },
+                {
+                    "litres": 13,
+                    "distance_driven": 19,
+                    "total_price": 30
+                }
+            ]
+        }
+    ]
+}
