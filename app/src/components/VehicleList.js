@@ -18,8 +18,9 @@ class VehicleList extends React.Component {
     let {vehicles} = this.context;
     return (
       <>
-      {vehicles.map(vehicle => (
+      {vehicles.map((vehicle, i) => (
         <Vehicle
+          key={i}
           name={vehicle.name}
           register_number={vehicle.register_number}
           fillups={vehicle.fillups}
