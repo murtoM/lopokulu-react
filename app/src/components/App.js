@@ -6,16 +6,21 @@
 //
 // SPDX-License-Identifier: MIT
 
+import React from 'react';
 import VehicleList from './VehicleList';
 import GlobalStats from './GlobalStats';
+import vehicles from '../vehicle-data.json';
+import { FillupDataContext } from './data-context';
 
-function App() {
-  return (
-    <>
-      <GlobalStats />
-      <VehicleList />
-    </>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <FillupDataContext.Provider value={vehicles}>
+        <GlobalStats />
+        <VehicleList />
+      </FillupDataContext.Provider>
+    );
+  }
 }
 
 export default App;

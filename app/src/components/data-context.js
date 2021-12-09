@@ -7,18 +7,5 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
-import { FillupDataContext } from './data-context';
 
-class GlobalStats extends React.Component {
-  static contextType = FillupDataContext;
-
-  render() {
-    let {vehicles} = this.context;
-
-    return (
-      <p>{vehicles[0].name}</p>
-    );
-  }
-}
-
-export default GlobalStats;
+export const FillupDataContext = React.createContext();
