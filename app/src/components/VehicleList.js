@@ -18,13 +18,13 @@ class VehicleList extends React.Component {
     let {vehicles} = this.context;
     return (
       <section className="container" id="vehicle-list">
-      {vehicles.map((vehicle, i) => (
-        <Vehicle
-          key={i}
-          name={vehicle.name}
-          register_number={vehicle.register_number}
-          fillups={vehicle.fillups}
-        />
+        {vehicles.map((vehicle, i) => (
+          <Vehicle
+            key={i}
+            name={vehicle.name}
+            register_number={vehicle.register_number}
+            fillups={vehicle.fillups}
+          />
         ))}
       </section>
     );
