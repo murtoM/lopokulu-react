@@ -8,6 +8,7 @@
 
 function FillupRow() {
   return (
+    <td>Row</td>
   );
 }
 

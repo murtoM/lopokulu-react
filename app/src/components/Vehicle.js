@@ -6,8 +6,15 @@
 //
 // SPDX-License-Identifier: MIT
 
+import FillupTable from './FillupTable';
+import SingleVehicleStats from './SingleVehicleStats';
+
 function Vehicle() {
   return (
+    <>
+      <SingleVehicleStats />
+      <FillupTable />
+    </>
   );
 }
 

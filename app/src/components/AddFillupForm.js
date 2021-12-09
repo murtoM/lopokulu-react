@@ -6,8 +6,11 @@
 //
 // SPDX-License-Identifier: MIT
 
+import VehicleSelectionRadio from './VehicleSelectionRadio';
+
 function AddFillupForm() {
   return (
+    <VehicleSelectionRadio />
   );
 }
 

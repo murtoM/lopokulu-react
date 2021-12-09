@@ -6,12 +6,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-import Vehicle from './Vehicle';
-
-function VehicleList() {
+function GlobalStats() {
   return (
-    <Vehicle />
+    <li>Global Stat Row</li>
   );
 }
 
-export default VehicleList;
+export default GlobalStats;

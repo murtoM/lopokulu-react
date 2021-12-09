@@ -8,6 +8,8 @@
 
 function VehicleSelectionRadio() {
   return (
+    <label for="vehicle_1"><input type="radio" id="vehicle_1">Vehicle 1</label>
+    <label for="vehicle_2"><input type="radio" id="vehicle_2">Vehicle 2</label>
   );
 }
 

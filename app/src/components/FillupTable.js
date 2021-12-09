@@ -6,8 +6,11 @@
 //
 // SPDX-License-Identifier: MIT
 
+import FillupRow from './FillupRow';
+
 function FillupTable() {
   return (
+    <FillupRow />
   );
 }
 
