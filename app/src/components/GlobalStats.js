@@ -16,9 +16,26 @@ class GlobalStats extends React.Component {
     let {vehicles} = this.context;
 
     return (
-      <p>{vehicles[0].name}</p>
+      <>
+        <div className='grid' id='totals'>
+          <TotalsCard title='litres' value='N/A' />
+          <TotalsCard title='€' value='N/A' />
+          <TotalsCard title='km' value='N/A' />
+          <TotalsCard title='€ / 100 km' value='N/A' theme='avg' />
+          <TotalsCard title='l / 100 km' value='N/A' theme='avg' />
+        </div>
+      </>
     );
   }
+}
+
+function TotalsCard(props) {
+  return (
+    <article className={props.theme}>
+      <p>{props.value}</p>
+      <p>{props.title}</p>
+    </article>
+  );
 }
 
 export default GlobalStats;

@@ -25,6 +25,7 @@
 
 #site-header #main-nav a.active {
     background-color: var(--primary-focus);
+    color: var(--primary);
 }
 
 #site-header #main-nav li:first-child a {
@@ -35,6 +36,33 @@
 #site-header #main-nav li:last-child a {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+}
+
+#totals article {
+    padding: 0;
+}
+
+#totals article p {
+    margin: 0;
+    padding: 1rem;
+}
+
+#totals article p:first-child {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#totals article p:last-child {
+    background-color: #0d3748;;
+    color: var(--primary-inverse);
+    padding: 0.5rem 1rem;
+    text-align: right;
+}
+
+#totals article.avg p:last-child {
+    background-color: #08391e;
+    color: var(--primary-inverse);
 }
 
 #vehicle-list li {
