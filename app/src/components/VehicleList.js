@@ -17,7 +17,7 @@ class VehicleList extends React.Component {
   render() {
     let {vehicles} = this.context;
     return (
-      <>
+      <section className="container" id="vehicle-list">
       {vehicles.map((vehicle, i) => (
         <Vehicle
           key={i}
@@ -26,7 +26,7 @@ class VehicleList extends React.Component {
           fillups={vehicle.fillups}
         />
         ))}
-      </>
+      </section>
     );
   }
 }

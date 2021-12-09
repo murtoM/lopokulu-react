@@ -36,3 +36,7 @@
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
 }
+
+#vehicle-list li {
+    list-style-type: none;
+}
