@@ -6,12 +6,28 @@
 //
 // SPDX-License-Identifier: MIT
 
+import React from 'react';
+import { FillupDataContext } from './data-context.js';
+
 import Vehicle from './Vehicle';
 
-function VehicleList() {
-  return (
-    <Vehicle />
-  );
+class VehicleList extends React.Component {
+  static contextType = FillupDataContext;
+
+  render() {
+    let {vehicles} = this.context;
+    return (
+      <>
+      {vehicles.map(vehicle => (
+        <Vehicle
+          name={vehicle.name}
+          register_number={vehicle.register_number}
+          fillups={vehicle.fillups}
+        />
+        ))}
+      </>
+    );
+  }
 }
 
 export default VehicleList;
