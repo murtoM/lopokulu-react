@@ -16,7 +16,7 @@ function Vehicle(props) {
         <nav>
           <ul>
             <li>
-              ({props.register_number}) {props.name}
+              <strong>({props.register_number}) {props.name}</strong>
             </li>
           </ul>
           <ul>

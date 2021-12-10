@@ -12,6 +12,15 @@
     --form-element-spacing-horizontal: 0.33rem;
 }
 
+body {
+    background-image: url("images/noisy-texture-100x100.png");
+    background-repeat: repeat;
+}
+
+#site-header {
+    background-color: #08222d;
+}
+
 #site-header #main-nav li {
     margin: 0 1px;
 }
@@ -20,7 +29,7 @@
     background-color: var(--primary);
     border-radius: 0;
     color: var(--primary-inverse);
-    padding: calc(var(--spacing) * 0.2) calc(var(--spacing) * .3);
+    padding: calc(var(--spacing) * .2) calc(var(--spacing) * .5);
 }
 
 #site-header #main-nav a.active {
