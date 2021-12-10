@@ -6,15 +6,33 @@
 //
 // SPDX-License-Identifier: MIT
 
-import FillupTable from './FillupTable';
-import SingleVehicleStats from './SingleVehicleStats';
+import FillupTable from "./FillupTable";
+import SingleVehicleStats from "./SingleVehicleStats";
 
-function Vehicle() {
+function Vehicle(props) {
   return (
-    <>
-      <SingleVehicleStats />
-      <FillupTable />
-    </>
+    <article>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              ({props.register_number}) {props.name}
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#" role="button">
+                Add Refueling Expense
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <SingleVehicleStats fillups={props.fillups} />
+        <FillupTable fillups={props.fillups} />
+      </main>
+    </article>
   );
 }
 
