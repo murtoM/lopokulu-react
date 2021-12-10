@@ -7,7 +7,8 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
-import { FillupDataContext } from './data-context';
+import {FillupDataContext} from './data-context';
+import {roundToPrecision} from './helpers';
 
 class GlobalStats extends React.Component {
   static contextType = FillupDataContext;
@@ -19,17 +20,17 @@ class GlobalStats extends React.Component {
 
     return (
       <div className='grid' id='totals'>
-        <TotalsCard title='litres' value={sums.litres} />
-        <TotalsCard title='€' value={sums.cost} />
-        <TotalsCard title='km' value={sums.distance} />
+        <TotalsCard title='litres' value={roundToPrecision(sums.litres, 1)} />
+        <TotalsCard title='€' value={roundToPrecision(sums.cost, 2)} />
+        <TotalsCard title='km' value={roundToPrecision(sums.distance, 1)} />
         <TotalsCard
           title='€ / 100 km'
-          value={Math.round(averages.cost * 100) / 100} //Round to 2 decimal
+          value={roundToPrecision(averages.cost, 2)}
           theme='avg'
         />
         <TotalsCard
           title='l / 100 km'
-          value={Math.round(averages.litres * 10) / 10} //Round to 1 decimal
+          value={roundToPrecision(averages.litres, 1)}
           theme='avg'
         />
       </div>
