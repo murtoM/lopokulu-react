@@ -77,3 +77,23 @@ body {
 #vehicle-list li {
     list-style-type: none;
 }
+
+#single-vehicle-totals::before {
+    content: "";
+    height: 6em;
+    width: 0.2em;
+    background: #0d3748;
+    position: absolute;
+    margin-left: -0.5em;
+    border-radius: 5px;
+}
+
+#single-vehicle-averages::before {
+    content: "";
+    height: 4.5em;
+    width: 0.2em;
+    background: #08391e;
+    position: absolute;
+    margin-left: -0.5em;
+    border-radius: 5px;
+}
