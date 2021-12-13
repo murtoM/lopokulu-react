@@ -14,9 +14,9 @@ class GlobalStats extends React.Component {
   static contextType = FillupDataContext;
 
   render() {
-    let {vehicles} = this.context;
+    let {vehicleState} = this.context;
 
-    let {sums, averages} = this.calculate(vehicles);
+    let {sums, averages} = this.calculate(vehicleState.vehicles);
 
     return (
       <div className='grid' id='totals'>

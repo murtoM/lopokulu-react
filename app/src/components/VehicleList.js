@@ -15,10 +15,10 @@ class VehicleList extends React.Component {
   static contextType = FillupDataContext;
 
   render() {
-    let {vehicles} = this.context;
+    let {vehicleState} = this.context;
     return (
       <section className="container" id="vehicle-list">
-        {vehicles.map((vehicle, i) => (
+        {vehicleState.vehicles.map((vehicle, i) => (
           <Vehicle
             key={i}
             name={vehicle.name}

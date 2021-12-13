@@ -24,3 +24,10 @@ export function modalReducer(state, action) {
       throw new Error();
   }
 }
+
+export function vehicleReducer(state, action) {
+  switch (action.type) {
+    default:
+      throw new Error();
+  }
+}
