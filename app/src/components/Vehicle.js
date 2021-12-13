@@ -30,7 +30,7 @@ function Vehicle(props) {
                   <button
                     onClick={() => modalDispatch({
                       type: 'show',
-                      title: props.register_number,
+                      title: 'Add fillup for ' + props.register_number,
                       content: <AddFillupForm register_number={props.register_number} />
                     })}
                   >
