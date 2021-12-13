@@ -9,7 +9,7 @@
 import FillupTable from "./FillupTable";
 import AddFillupForm from './AddFillupForm';
 import SingleVehicleStats from "./SingleVehicleStats";
-import { ModalContext } from "./data-context.js";
+import { ModalContext } from "./contexts";
 
 function Vehicle(props) {
   return (
@@ -26,9 +26,13 @@ function Vehicle(props) {
           <ul>
             <li>
               <ModalContext.Consumer>
-                {({showModalWithData}) => (
+                {({modalState, modalDispatch}) => (
                   <button
-                    onClick={() => showModalWithData(props.register_number, <AddFillupForm register_number={props.register_number} />)}
+                    onClick={() => modalDispatch({
+                      type: 'show',
+                      title: props.register_number,
+                      content: <AddFillupForm register_number={props.register_number} />
+                    })}
                   >
                     Add Refueling Expense
                   </button>

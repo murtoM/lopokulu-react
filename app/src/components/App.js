@@ -6,48 +6,27 @@
 //
 // SPDX-License-Identifier: MIT
 
-import React from "react";
+import React, {useReducer} from "react";
 import AddFillupForm from "./AddFillupForm";
 import Modal from "./Modal";
 import VehicleList from "./VehicleList";
 import GlobalStats from "./GlobalStats";
 import vehicles from "../vehicle-data.json";
-import { FillupDataContext, ModalContext } from "./data-context";
+import { FillupDataContext, ModalContext, initialModalState } from "./contexts";
+import { modalReducer } from "./reducers";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+function App() {
+  const [modalState, modalDispatch] = useReducer(modalReducer, initialModalState);
 
-    this.hideModal = () => {
-      this.setState((state) => ({
-        modalVisibility: false,
-      }));
-    };
-    this.showModalWithData = (title, content) => {
-      this.setState((state) => ({
-        modalVisibility: true,
-        title: title,
-        content: content,
-      }));
-    };
-    this.state = {
-      modalVisibility: false,
-      hideModal: this.hideModal,
-      showModalWithData: this.showModalWithData,
-    };
-  }
-  render() {
-    return (
-      <FillupDataContext.Provider value={vehicles}>
-        <GlobalStats />
-        <ModalContext.Provider value={this.state}>
-          <VehicleList />
-          <AddFillupForm />
-          <Modal />
-        </ModalContext.Provider>
-      </FillupDataContext.Provider>
-    );
-  }
+  return (
+    <FillupDataContext.Provider value={vehicles}>
+      <GlobalStats />
+      <ModalContext.Provider value={{modalState, modalDispatch}}>
+        <VehicleList />
+        <Modal />
+      </ModalContext.Provider>
+    </FillupDataContext.Provider>
+  );
 }
 
 export default App;

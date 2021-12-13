@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
-import {FillupDataContext} from './data-context';
+import {FillupDataContext} from './contexts';
 import {roundToPrecision} from './helpers';
 
 class GlobalStats extends React.Component {

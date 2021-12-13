@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
-import { FillupDataContext } from './data-context.js';
+import { FillupDataContext } from './contexts';
 
 import Vehicle from './Vehicle';
 

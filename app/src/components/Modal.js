@@ -7,13 +7,13 @@
 // SPDX-License-Identifier: MIT
 
 import React from "react";
-import { ModalContext } from "./data-context.js";
+import { ModalContext } from "./contexts";
 
-export default function Modal(props) {
+export default function Modal() {
   return (
     <ModalContext.Consumer>
-      {({ modalVisibility, hideModal, content, title }) => {
-        if (!modalVisibility) {
+      {({ modalState, modalDispatch }) => {
+        if (!modalState.modalVisibility) {
           return null;
         }
         return (
@@ -23,14 +23,16 @@ export default function Modal(props) {
                 <nav>
                   <ul>
                     <li>
-                      <strong>{title}</strong>
+                      <strong>{modalState.title}</strong>
                     </li>
                   </ul>
                   <ul>
                     <li>
                       <button
                         className="secondary outline"
-                        onClick={hideModal}
+                        onClick={() => modalDispatch({
+                          type: 'hide',
+                        })}
                       >
                         ✕
                       </button>
@@ -38,7 +40,7 @@ export default function Modal(props) {
                   </ul>
                 </nav>
               </header>
-              {content}
+              {modalState.content}
             </article>
           </div>
         );
