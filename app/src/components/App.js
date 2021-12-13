@@ -18,15 +18,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleModalVisibility = () => {
-      console.log("ajetaan");
-      this.setState(state => ({
-        modalVisibility: state.modalVisibility === true ? false : true
+    this.hideModal = () => {
+      this.setState((state) => ({
+        modalVisibility: false,
+      }));
+    };
+    this.showModalWithData = (title, content) => {
+      this.setState((state) => ({
+        modalVisibility: true,
+        title: title,
+        content: content,
       }));
     };
     this.state = {
       modalVisibility: false,
-      toggleModalVisibility: this.toggleModalVisibility,
+      hideModal: this.hideModal,
+      showModalWithData: this.showModalWithData,
     };
   }
   render() {

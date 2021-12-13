@@ -9,18 +9,36 @@
 import React from "react";
 import { ModalContext } from "./data-context.js";
 
-export default function Modal() {
+export default function Modal(props) {
   return (
     <ModalContext.Consumer>
-      {({ modalVisibility, toggleModalVisibility }) => {
-        console.log(modalVisibility);
+      {({ modalVisibility, hideModal, content, title }) => {
         if (!modalVisibility) {
           return null;
         }
         return (
-          <div className="container" id="modal">
-            <article>
-              <h1>Hello world, im modal</h1>
+          <div id="modal">
+            <article className="container">
+              <header>
+                <nav>
+                  <ul>
+                    <li>
+                      <strong>{title}</strong>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button
+                        className="secondary outline"
+                        onClick={hideModal}
+                      >
+                        ✕
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+              </header>
+              {content}
             </article>
           </div>
         );

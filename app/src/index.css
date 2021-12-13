@@ -17,6 +17,23 @@ body {
     background-repeat: repeat;
 }
 
+#modal {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #444;
+}
+
+#modal > article {
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1em;
+}
+
 #site-header {
     background-color: #08222d;
 }
@@ -97,3 +114,4 @@ body {
     margin-left: -0.5em;
     border-radius: 5px;
 }
+

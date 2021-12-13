@@ -6,11 +6,12 @@
 //
 // SPDX-License-Identifier: MIT
 
-import React from 'react';
+import React from "react";
 
 export const FillupDataContext = React.createContext();
 export const ModalContext = React.createContext({
   modalVisibility: false,
-  toggleModalVisibility: (visibility) => {}
+  toggleModalVisibility: (visibility) => {},
+  title: "Modal",
+  content: "Modal content",
 });
-

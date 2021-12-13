@@ -6,10 +6,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-function AddFillupForm() {
+function AddFillupForm(props) {
   return (
     <form action="#" method="post">
-      <h3>Add fillup for vehicle</h3>
+      <h3>Add fillup for {props.register_number}</h3>
       <p>
         <label htmlFor="id_distance">Distance driven:</label>
         <input

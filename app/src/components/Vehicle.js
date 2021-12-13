@@ -7,6 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 import FillupTable from "./FillupTable";
+import AddFillupForm from './AddFillupForm';
 import SingleVehicleStats from "./SingleVehicleStats";
 import { ModalContext } from "./data-context.js";
 
@@ -25,9 +26,9 @@ function Vehicle(props) {
           <ul>
             <li>
               <ModalContext.Consumer>
-                {({modalVisibility, toggleModalVisibility}) => (
+                {({showModalWithData}) => (
                   <button
-                    onClick={toggleModalVisibility}
+                    onClick={() => showModalWithData(props.register_number, <AddFillupForm register_number={props.register_number} />)}
                   >
                     Add Refueling Expense
                   </button>
