@@ -9,3 +9,8 @@
 import React from 'react';
 
 export const FillupDataContext = React.createContext();
+export const ModalContext = React.createContext({
+  modalVisibility: false,
+  toggleModalVisibility: (visibility) => {}
+});
+

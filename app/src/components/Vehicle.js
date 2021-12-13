@@ -8,6 +8,7 @@
 
 import FillupTable from "./FillupTable";
 import SingleVehicleStats from "./SingleVehicleStats";
+import { ModalContext } from "./data-context.js";
 
 function Vehicle(props) {
   return (
@@ -16,14 +17,22 @@ function Vehicle(props) {
         <nav>
           <ul>
             <li>
-              <strong>({props.register_number}) {props.name}</strong>
+              <strong>
+                ({props.register_number}) {props.name}
+              </strong>
             </li>
           </ul>
           <ul>
             <li>
-              <a href="#" role="button">
-                Add Refueling Expense
-              </a>
+              <ModalContext.Consumer>
+                {({modalVisibility, toggleModalVisibility}) => (
+                  <button
+                    onClick={toggleModalVisibility}
+                  >
+                    Add Refueling Expense
+                  </button>
+                )}
+              </ModalContext.Consumer>
             </li>
           </ul>
         </nav>

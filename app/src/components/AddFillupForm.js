@@ -6,11 +6,42 @@
 //
 // SPDX-License-Identifier: MIT
 
-import VehicleSelectionRadio from './VehicleSelectionRadio';
-
 function AddFillupForm() {
   return (
-    <VehicleSelectionRadio />
+    <form action="#" method="post">
+      <h3>Add fillup for vehicle</h3>
+      <p>
+        <label htmlFor="id_distance">Distance driven:</label>
+        <input
+          type="number"
+          name="distance"
+          step="0.1"
+          required=""
+          id="id_distance"
+        />
+      </p>
+      <p>
+        <label htmlFor="id_litres">Litres:</label>
+        <input
+          type="number"
+          name="litres"
+          step="0.01"
+          required=""
+          id="id_litres"
+        />
+      </p>
+      <p>
+        <label htmlFor="id_total_price">Total price:</label>
+        <input
+          type="number"
+          name="total_price"
+          step="0.01"
+          required=""
+          id="id_total_price"
+        />
+      </p>
+      <input type="submit" value="Add Refueling Expense" />
+    </form>
   );
 }
 
