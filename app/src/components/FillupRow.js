@@ -6,9 +6,13 @@
 //
 // SPDX-License-Identifier: MIT
 
-function FillupRow() {
+function FillupRow(props) {
   return (
-    <td>Row</td>
+    <tr>
+      <td>{props.fillup.litres}</td>
+      <td>{props.fillup.distance_driven}</td>
+      <td>{props.fillup.total_price}</td>
+    </tr>
   );
 }
 
