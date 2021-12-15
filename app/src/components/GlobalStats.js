@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { DataContext } from './contexts';
-import { roundToPrecision, getFillupsForVehicle } from './helpers';
+import { roundToPrecision } from './helpers';
 
 class GlobalStats extends React.Component {
   static contextType = DataContext;
@@ -15,7 +15,7 @@ class GlobalStats extends React.Component {
   render() {
     let {vehicleState} = this.context;
 
-    let {sums, averages} = this.calculate(vehicleState.vehicles);
+    let {sums, averages} = this.calculate(vehicleState);
 
     return (
       <div className='grid' id='totals'>
@@ -49,7 +49,9 @@ class GlobalStats extends React.Component {
 
     allVehicles.forEach((vehicle) => {
       let {fillupState} = this.context;
-      let {litres, cost, distance} = this.sumFillups(getFillupsForVehicle(fillupState, vehicle.id));
+      let {litres, cost, distance} = this.sumFillups(
+        fillupState.filter(f => f.vehicle_id === vehicle.id)
+      );
       sums.litres += litres;
       sums.cost += cost;
       sums.distance += distance;

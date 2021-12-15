@@ -36,13 +36,10 @@ export function fillupReducer(state, action) {
         'litres': parseFloat(action.event.target.elements.litres.value),
       };
 
-      return ({
+      return ([
         ...state,
-        fillups: [
-          ...state.fillups,
-          fillup,
-        ]
-      });
+        fillup,
+      ]);
     default:
       throw new Error();
   }

@@ -9,8 +9,8 @@ import React, { useReducer, useEffect } from 'react';
 import Modal from './Modal';
 import VehicleList from './VehicleList';
 import GlobalStats from './GlobalStats';
-import vehicles from '../initial-data.json';
-import fillups from '../initial-data.json';
+import { vehicles } from '../initial-data.json';
+import { fillups } from '../initial-data.json';
 import { DataContext, ModalContext, initialModalState } from './contexts';
 import { vehicleReducer, modalReducer, fillupReducer } from './reducers';
 
@@ -29,10 +29,10 @@ function App() {
   );
 
   useEffect(() => {
-    localStorage.setItem('vehicles', JSON.stringify(vehicleState.vehicles));
+    localStorage.setItem('vehicles', JSON.stringify(vehicleState));
   }, [vehicleState]);
   useEffect(() => {
-    localStorage.setItem('fillups', JSON.stringify(fillupState.fillups));
+    localStorage.setItem('fillups', JSON.stringify(fillupState));
   }, [fillupState]);
 
   return (
