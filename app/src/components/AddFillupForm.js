@@ -18,7 +18,7 @@ function AddFillupForm(props) {
               method="post"
               onSubmit={(event) => {
                 fillupDispatch({ type: "add_fillup", event: event });
-                modalDispatch({ type: 'hide' });
+                modalDispatch({ type: "hide" });
               }}
             >
               <p>
@@ -51,11 +51,7 @@ function AddFillupForm(props) {
                   id="id_total_price"
                 />
               </p>
-              <input
-                type="hidden"
-                name="vehicle_id"
-                value={props.vehicle_id}
-              />
+              <input type="hidden" name="vehicle_id" value={props.vehicle_id} />
               <input type="submit" value="Add Refueling Expense" />
             </form>
           )}

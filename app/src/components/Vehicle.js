@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 
 import FillupTable from "./FillupTable";
-import AddFillupForm from './AddFillupForm';
+import AddFillupForm from "./AddFillupForm";
 import SingleVehicleStats from "./SingleVehicleStats";
 import { ModalContext } from "./contexts";
 
@@ -25,13 +25,17 @@ function Vehicle(props) {
           <ul>
             <li>
               <ModalContext.Consumer>
-                {({modalState, modalDispatch}) => (
+                {({ modalState, modalDispatch }) => (
                   <button
-                    onClick={() => modalDispatch({
-                      type: 'show',
-                      title: 'Add fillup for ' + props.register_number,
-                      content: <AddFillupForm vehicle_id={props.vehicle_id} />
-                    })}
+                    onClick={() =>
+                      modalDispatch({
+                        type: "show",
+                        title: "Add fillup for " + props.register_number,
+                        content: (
+                          <AddFillupForm vehicle_id={props.vehicle_id} />
+                        ),
+                      })
+                    }
                   >
                     Add Refueling Expense
                   </button>

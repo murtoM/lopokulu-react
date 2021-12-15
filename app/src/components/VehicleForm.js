@@ -18,24 +18,16 @@ export function VehicleForm(props) {
               method="post"
               onSubmit={(event) => {
                 vehicleDispatch({ type: "add", event: event });
-                modalDispatch({ type: 'hide' });
+                modalDispatch({ type: "hide" });
               }}
             >
               <p>
                 <label htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                />
+                <input type="text" name="name" required />
               </p>
               <p>
                 <label htmlFor="register_number">Register number:</label>
-                <input
-                  type="text"
-                  name="register_number"
-                  required
-                />
+                <input type="text" name="register_number" required />
               </p>
               <input type="submit" value="Add vehicle" />
             </form>

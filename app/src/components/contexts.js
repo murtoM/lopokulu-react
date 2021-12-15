@@ -13,6 +13,6 @@ export const initialModalState = {
   modalVisibility: false,
   title: "Modal",
   content: "Modal content",
-}
+};
 
 export const ModalContext = React.createContext(initialModalState);

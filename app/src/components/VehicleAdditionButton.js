@@ -5,19 +5,21 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { ModalContext } from './contexts';
-import { VehicleForm } from './VehicleForm';
+import { ModalContext } from "./contexts";
+import { VehicleForm } from "./VehicleForm";
 
 function VehicleAdditionButton() {
   return (
     <ModalContext.Consumer>
-      {({modalState, modalDispatch}) => (
+      {({ modalState, modalDispatch }) => (
         <button
-          onClick={() => modalDispatch({
-            type: 'show',
-            title: 'Add a new vehicle',
-            content: <VehicleForm />
-          })}
+          onClick={() =>
+            modalDispatch({
+              type: "show",
+              title: "Add a new vehicle",
+              content: <VehicleForm />,
+            })
+          }
         >
           Add a new vehicle
         </button>

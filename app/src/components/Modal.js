@@ -29,9 +29,11 @@ export default function Modal() {
                     <li>
                       <button
                         className="secondary outline"
-                        onClick={() => modalDispatch({
-                          type: 'hide',
-                        })}
+                        onClick={() =>
+                          modalDispatch({
+                            type: "hide",
+                          })
+                        }
                       >
                         ✕
                       </button>
