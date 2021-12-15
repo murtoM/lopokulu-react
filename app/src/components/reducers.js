@@ -30,7 +30,7 @@ export function fillupReducer(state, action) {
       action.event.preventDefault();
 
       let fillup = {
-        'id': action.event.target.elements.vehicle_id.value,
+        'vehicle_id': action.event.target.elements.vehicle_id.value,
         'distance_driven': parseFloat(action.event.target.elements.distance.value),
         'total_price': parseFloat(action.event.target.elements.total_price.value),
         'litres': parseFloat(action.event.target.elements.litres.value),

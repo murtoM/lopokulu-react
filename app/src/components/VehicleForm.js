@@ -5,37 +5,42 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { DataContext } from "./contexts";
+import { DataContext, ModalContext } from "./contexts";
 
 export function VehicleForm(props) {
   return (
     <DataContext.Consumer>
       {({ vehicleDispatch }) => (
-        <form
-          action="#"
-          method="post"
-          onSubmit={(event) =>
-            vehicleDispatch({ type: "add", event: event })
-          }
-        >
-          <p>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              name="name"
-              required
-            />
-          </p>
-          <p>
-            <label htmlFor="register_number">Register number:</label>
-            <input
-              type="text"
-              name="register_number"
-              required
-            />
-          </p>
-          <input type="submit" value="Add vehicle" />
-        </form>
+        <ModalContext.Consumer>
+          {({ modalDispatch }) => (
+            <form
+              action="#"
+              method="post"
+              onSubmit={(event) => {
+                vehicleDispatch({ type: "add", event: event });
+                modalDispatch({ type: 'hide' });
+              }}
+            >
+              <p>
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                />
+              </p>
+              <p>
+                <label htmlFor="register_number">Register number:</label>
+                <input
+                  type="text"
+                  name="register_number"
+                  required
+                />
+              </p>
+              <input type="submit" value="Add vehicle" />
+            </form>
+          )}
+        </ModalContext.Consumer>
       )}
     </DataContext.Consumer>
   );
