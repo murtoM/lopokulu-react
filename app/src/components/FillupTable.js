@@ -8,9 +8,25 @@
 
 import FillupRow from './FillupRow';
 
-function FillupTable() {
+function FillupTable(props) {
   return (
-    <FillupRow />
+    <table>
+      <thead>
+        <tr>
+          <th>Litres</th>
+          <th>Distance driven</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+      {props.fillups.map((fillup, i) => (
+        <FillupRow
+          key={i}
+          fillup={fillup}
+        />
+      ))}
+      </tbody>
+    </table>
   );
 }
 
