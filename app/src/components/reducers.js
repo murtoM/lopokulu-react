@@ -30,7 +30,7 @@ export function fillupReducer(state, action) {
       action.event.preventDefault();
 
       let fillup = {
-        'vehicle_id': action.event.target.elements.vehicle_id.value,
+        'id': action.event.target.elements.vehicle_id.value,
         'distance_driven': parseFloat(action.event.target.elements.distance.value),
         'total_price': parseFloat(action.event.target.elements.total_price.value),
         'litres': parseFloat(action.event.target.elements.litres.value),
@@ -47,6 +47,19 @@ export function fillupReducer(state, action) {
 
 export function vehicleReducer(state, action) {
   switch (action.type) {
+    case 'add':
+      action.event.preventDefault();
+      let vehicle = {
+        'id': state.length.toString(),
+        'name': action.event.target.elements.name.value,
+        'register_number': action.event.target.elements.register_number.value,
+      }
+
+      return ([
+        ...state,
+        vehicle,
+      ]);
+
     default:
       throw new Error();
   }
