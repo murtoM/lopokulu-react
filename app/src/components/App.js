@@ -29,10 +29,10 @@ function App() {
   );
 
   useEffect(() => {
-    localStorage.setItem('vehicles', JSON.stringify(vehicleState));
+    localStorage.setItem('vehicles', JSON.stringify(vehicleState.vehicles));
   }, [vehicleState]);
   useEffect(() => {
-    localStorage.setItem('fillups', JSON.stringify(fillupState));
+    localStorage.setItem('fillups', JSON.stringify(fillupState.fillups));
   }, [fillupState]);
 
   return (
