@@ -5,7 +5,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import FillupRow from './FillupRow';
+import FillupRow from "./FillupRow";
 
 function FillupTable(props) {
   return (
@@ -18,12 +18,9 @@ function FillupTable(props) {
         </tr>
       </thead>
       <tbody>
-      {props.fillups.map((fillup, i) => (
-        <FillupRow
-          key={i}
-          fillup={fillup}
-        />
-      ))}
+        {props.fillups.map((fillup, i) => (
+          <FillupRow key={i} fillup={fillup} />
+        ))}
       </tbody>
     </table>
   );

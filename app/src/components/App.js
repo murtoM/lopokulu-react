@@ -5,42 +5,45 @@
 //
 // SPDX-License-Identifier: MIT
 
-import React, { useReducer, useEffect } from 'react';
-import Modal from './Modal';
-import VehicleList from './VehicleList';
-import GlobalStats from './GlobalStats';
-import VehicleAdditionButton from './VehicleAdditionButton';
-import { vehicles, fillups } from '../initial-data.json';
-import { DataContext, ModalContext, initialModalState } from './contexts';
-import { vehicleReducer, modalReducer, fillupReducer } from './reducers';
+import React, { useReducer, useEffect } from "react";
+import Modal from "./Modal";
+import VehicleList from "./VehicleList";
+import GlobalStats from "./GlobalStats";
+import VehicleAdditionButton from "./VehicleAdditionButton";
+import { vehicles, fillups } from "../initial-data.json";
+import { DataContext, ModalContext, initialModalState } from "./contexts";
+import { vehicleReducer, modalReducer, fillupReducer } from "./reducers";
 
 function App() {
-  const raw_ls_vehicles = localStorage.getItem('vehicles');
-  const raw_ls_fillups = localStorage.getItem('fillups');
+  const raw_ls_vehicles = localStorage.getItem("vehicles");
+  const raw_ls_fillups = localStorage.getItem("fillups");
 
-  const [modalState, modalDispatch] = useReducer(modalReducer, initialModalState);
+  const [modalState, modalDispatch] = useReducer(
+    modalReducer,
+    initialModalState
+  );
   const [vehicleState, vehicleDispatch] = useReducer(
     vehicleReducer,
-    JSON.parse(raw_ls_vehicles) || vehicles,
+    JSON.parse(raw_ls_vehicles) || vehicles
   );
   const [fillupState, fillupDispatch] = useReducer(
     fillupReducer,
-    JSON.parse(raw_ls_fillups) || fillups,
+    JSON.parse(raw_ls_fillups) || fillups
   );
 
   useEffect(() => {
-    localStorage.setItem('vehicles', JSON.stringify(vehicleState));
+    localStorage.setItem("vehicles", JSON.stringify(vehicleState));
   }, [vehicleState]);
   useEffect(() => {
-    localStorage.setItem('fillups', JSON.stringify(fillupState));
+    localStorage.setItem("fillups", JSON.stringify(fillupState));
   }, [fillupState]);
 
   return (
-    <DataContext.Provider value={
-      {vehicleState, vehicleDispatch, fillupState, fillupDispatch}
-    }>
+    <DataContext.Provider
+      value={{ vehicleState, vehicleDispatch, fillupState, fillupDispatch }}
+    >
       <GlobalStats />
-      <ModalContext.Provider value={{modalState, modalDispatch}}>
+      <ModalContext.Provider value={{ modalState, modalDispatch }}>
         <VehicleList />
         <VehicleAdditionButton />
         <Modal />

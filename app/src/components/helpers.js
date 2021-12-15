@@ -22,6 +22,6 @@
  * get rid of unnecessary decimals, and then divide that result with 100.
  */
 export const roundToPrecision = (value, targetPrecision) => {
-    let decimalsRemoved = Math.round(parseFloat(value + 'e' + targetPrecision));
-    return Number(decimalsRemoved + 'e-' + targetPrecision);
-}
+  let decimalsRemoved = Math.round(parseFloat(value + "e" + targetPrecision));
+  return Number(decimalsRemoved + "e-" + targetPrecision);
+};
