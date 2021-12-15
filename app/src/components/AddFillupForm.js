@@ -22,7 +22,7 @@ function AddFillupForm(props) {
               }}
             >
               <p>
-                <label htmlFor="id_distance">Distance driven:</label>
+                <label htmlFor="id_distance">Distance driven (km):</label>
                 <input
                   type="number"
                   name="distance"
@@ -42,7 +42,7 @@ function AddFillupForm(props) {
                 />
               </p>
               <p>
-                <label htmlFor="id_total_price">Total price:</label>
+                <label htmlFor="id_total_price">Total price (€):</label>
                 <input
                   type="number"
                   name="total_price"

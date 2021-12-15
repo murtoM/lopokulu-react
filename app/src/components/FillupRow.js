@@ -8,9 +8,9 @@
 function FillupRow(props) {
   return (
     <tr>
-      <td>{props.fillup.litres}</td>
-      <td>{props.fillup.distance_driven}</td>
-      <td>{props.fillup.total_price}</td>
+      <td>{props.fillup.litres} l</td>
+      <td>{props.fillup.distance_driven} km</td>
+      <td>{props.fillup.total_price} €</td>
     </tr>
   );
 }
