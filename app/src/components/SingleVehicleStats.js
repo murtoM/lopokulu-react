@@ -13,16 +13,19 @@ function SingleVehicleStats({ fillups }) {
   return (
     <div className="grid" id="single-vehicle-stats">
       <div id="single-vehicle-totals">
-        <strong>Total:</strong>
-        <li>{roundToPrecision(sums.litres, 1)} litres</li>
-        <li>{roundToPrecision(sums.cost, 1)} € </li>
-        <li>{roundToPrecision(sums.distance, 1)} km</li>
+        <h4>Total:</h4>
+        <ul>
+          <li>{roundToPrecision(sums.litres, 1)} litres</li>
+          <li>{roundToPrecision(sums.cost, 1)} € </li>
+          <li>{roundToPrecision(sums.distance, 1)} km</li>
+        </ul>
       </div>
       <div id="single-vehicle-averages">
-        <strong>Average:</strong>
-        <li>{roundToPrecision(averages.cost, 1)} € / 100km</li>
-        <li>{roundToPrecision(averages.litres, 1)} l / 100km
-        </li>
+        <h4>Average:</h4>
+        <ul>
+          <li>{roundToPrecision(averages.cost, 1)} € / 100km</li>
+          <li>{roundToPrecision(averages.litres, 1)} l / 100km</li>
+        </ul>
       </div>
     </div>
   );

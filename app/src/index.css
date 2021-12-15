@@ -98,23 +98,30 @@ body {
     list-style-type: none;
 }
 
-#single-vehicle-totals::before {
-    content: "";
-    height: 6em;
-    width: 0.2em;
-    background: #0d3748;
-    position: absolute;
-    margin-left: -0.5em;
-    border-radius: 5px;
+#single-vehicle-stats {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0;
 }
 
-#single-vehicle-averages::before {
-    content: "";
-    height: 4.5em;
-    width: 0.2em;
-    background: #08391e;
-    position: absolute;
-    margin-left: -0.5em;
+#single-vehicle-stats h4,
+#single-vehicle-stats ul {
+    margin-bottom: 0;
+}
+
+#single-vehicle-totals,
+#single-vehicle-averages {
+    border-width: 0.2rem;
     border-radius: 5px;
+    border-style: none none none solid;
+    padding-left: var(--spacing);
+}
+
+#single-vehicle-totals {
+    border-color: #0d3748;
+}
+
+#single-vehicle-averages {
+    border-color: #08391e;
 }
 
