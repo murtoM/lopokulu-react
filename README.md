@@ -10,6 +10,7 @@ SPDX-License-Identifier: CC0-1.0
 # lopokulu-react
 
 [![REUSE status](https://api.reuse.software/badge/github.com/murtoM/lopokulu-react)](https://api.reuse.software/info/github.com/murtoM/lopokulu-react)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 A small web app for vehicle fuel usage monitoring written in React. The data
 inserted into the app is saved in the browser `localStorage`.
