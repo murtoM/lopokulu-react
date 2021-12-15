@@ -1,5 +1,4 @@
 <!--
-SPDX-FileCopyrightText: 2021 Hannu Santti
 SPDX-FileCopyrightText: 2021 Markus Ijäs
 SPDX-FileCopyrightText: 2021 Markus Murto
 
