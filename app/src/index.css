@@ -1,0 +1,128 @@
+/*
+ * SPDX-FileCopyrightText: 2021 Jani Lehtinen
+ * SPDX-FileCopyrightText: 2021 Markus Ijäs
+ * SPDX-FileCopyrightText: 2021 Markus Murto
+ * SPDX-FileCopyrightText: 2021 Susanna Mikola
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+:root {
+    --spacing: 0.5rem;
+    --form-element-spacing-vertical: 0.25rem;
+    --form-element-spacing-horizontal: 0.33rem;
+}
+
+body {
+    background-image: url("images/noisy-texture-100x100.png");
+    background-repeat: repeat;
+}
+
+#modal {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#modal > article {
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1em;
+    z-index: 100;
+}
+
+#site-header {
+    background-color: #08222d;
+}
+
+#site-header #main-nav li {
+    margin: 0 1px;
+}
+
+#site-header #main-nav a {
+    background-color: var(--primary);
+    border-radius: 0;
+    color: var(--primary-inverse);
+    padding: calc(var(--spacing) * .2) calc(var(--spacing) * .5);
+}
+
+#site-header #main-nav a.active {
+    background-color: var(--primary-focus);
+    color: var(--primary);
+}
+
+#site-header #main-nav li:first-child a {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+#site-header #main-nav li:last-child a {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+#totals article {
+    padding: 0;
+}
+
+#totals article p {
+    margin: 0;
+    padding: 1rem;
+}
+
+#totals article p:first-child {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#totals article p:last-child {
+    background-color: #0d3748;;
+    color: var(--primary-inverse);
+    padding: 0.5rem 1rem;
+    text-align: right;
+}
+
+#totals article.avg p:last-child {
+    background-color: #08391e;
+    color: var(--primary-inverse);
+}
+
+#vehicle-list li {
+    list-style-type: none;
+}
+
+#single-vehicle-stats {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+#single-vehicle-stats h4,
+#single-vehicle-stats ul {
+    margin-bottom: 0;
+}
+
+#single-vehicle-totals,
+#single-vehicle-averages {
+    border-width: 0.2rem;
+    border-radius: 5px;
+    border-style: none none none solid;
+    padding-left: var(--spacing);
+}
+
+#single-vehicle-totals {
+    border-color: #0d3748;
+}
+
+#single-vehicle-averages {
+    border-color: #08391e;
+}
+

@@ -1,0 +1,42 @@
+<!--
+SPDX-FileCopyrightText: 2021 Jani Lehtinen
+SPDX-FileCopyrightText: 2021 Markus Ijäs
+SPDX-FileCopyrightText: 2021 Markus Murto
+SPDX-FileCopyrightText: 2021 Susanna Mikola
+
+SPDX-License-Identifier: MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Löpökulu-React"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Löpökulu React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <nav id="site-header" class="container-fluid">
+      <ul>
+        <li><a href="/"><strong>Löpökulu</strong></a></li>
+      </ul>
+      <ul id="main-nav">
+        <li><a class="active" href="/">Dashboard</a></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <div id="root"></div>
+    </main>
+  </body>
+</html>
