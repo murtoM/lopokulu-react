@@ -6,24 +6,25 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
-import { FillupDataContext } from './contexts';
+import { DataContext } from './contexts';
 
 import Vehicle from './Vehicle';
+import { getFillupsForVehicle } from './helpers';
 
 class VehicleList extends React.Component {
-  static contextType = FillupDataContext;
+  static contextType = DataContext;
 
   render() {
-    let {vehicleState} = this.context;
+    let {vehicleState, fillupState} = this.context;
     return (
       <section className="container" id="vehicle-list">
         {vehicleState.vehicles.map((vehicle, i) => (
           <Vehicle
             key={i}
-            vehicle_key={i}
+            vehicle_id={vehicle.id}
             name={vehicle.name}
             register_number={vehicle.register_number}
-            fillups={vehicle.fillups}
+            fillups={getFillupsForVehicle(fillupState, vehicle.id)}
           />
         ))}
       </section>

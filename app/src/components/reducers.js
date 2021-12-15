@@ -24,34 +24,32 @@ export function modalReducer(state, action) {
   }
 }
 
-export function vehicleReducer(state, action) {
+export function fillupReducer(state, action) {
   switch (action.type) {
     case 'add_fillup':
       action.event.preventDefault();
-      let vehicle_key = action.event.target.elements.vehicle_key.value;
 
       let fillup = {
-        "distance_driven": parseFloat(action.event.target.elements.distance.value),
-        "total_price": parseFloat(action.event.target.elements.total_price.value),
-        "litres": parseFloat(action.event.target.elements.litres.value),
+        'vehicle_id': action.event.target.elements.vehicle_id.value,
+        'distance_driven': parseFloat(action.event.target.elements.distance.value),
+        'total_price': parseFloat(action.event.target.elements.total_price.value),
+        'litres': parseFloat(action.event.target.elements.litres.value),
       };
-
-      let vehicle = {
-        'name': state.vehicles[vehicle_key].name,
-        'register_number': state.vehicles[vehicle_key].register_number,
-        'fillups': [
-          ...state.vehicles[vehicle_key].fillups,
-          fillup,
-        ],
-      };
-
-      let vehicles = [...state.vehicles];
-      vehicles[vehicle_key] = vehicle;
 
       return ({
         ...state,
-        vehicles: vehicles
+        fillups: [
+          ...state.fillups,
+          fillup,
+        ]
       });
+    default:
+      throw new Error();
+  }
+}
+
+export function vehicleReducer(state, action) {
+  switch (action.type) {
     default:
       throw new Error();
   }

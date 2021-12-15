@@ -30,7 +30,7 @@ function Vehicle(props) {
                     onClick={() => modalDispatch({
                       type: 'show',
                       title: 'Add fillup for ' + props.register_number,
-                      content: <AddFillupForm vehicle_key={props.vehicle_key} />
+                      content: <AddFillupForm vehicle_id={props.vehicle_id} />
                     })}
                   >
                     Add Refueling Expense

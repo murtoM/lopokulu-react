@@ -7,7 +7,7 @@
 
 import React from "react";
 
-export const FillupDataContext = React.createContext();
+export const DataContext = React.createContext();
 
 export const initialModalState = {
   modalVisibility: false,

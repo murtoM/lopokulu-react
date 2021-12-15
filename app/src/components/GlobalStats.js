@@ -6,11 +6,11 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
-import {FillupDataContext} from './contexts';
-import {roundToPrecision} from './helpers';
+import { DataContext } from './contexts';
+import { roundToPrecision, getFillupsForVehicle } from './helpers';
 
 class GlobalStats extends React.Component {
-  static contextType = FillupDataContext;
+  static contextType = DataContext;
 
   render() {
     let {vehicleState} = this.context;
@@ -48,7 +48,8 @@ class GlobalStats extends React.Component {
     }
 
     allVehicles.forEach((vehicle) => {
-      let {litres, cost, distance} = this.sumFillups(vehicle.fillups);
+      let {fillupState} = this.context;
+      let {litres, cost, distance} = this.sumFillups(getFillupsForVehicle(fillupState, vehicle.id));
       sums.litres += litres;
       sums.cost += cost;
       sums.distance += distance;

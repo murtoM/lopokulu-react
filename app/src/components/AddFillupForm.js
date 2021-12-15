@@ -5,17 +5,17 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { FillupDataContext } from "./contexts";
+import { DataContext } from "./contexts";
 
 function AddFillupForm(props) {
   return (
-    <FillupDataContext.Consumer>
-      {({ vehicleDispatch }) => (
+    <DataContext.Consumer>
+      {({ fillupDispatch }) => (
         <form
           action="#"
           method="post"
           onSubmit={(event) =>
-            vehicleDispatch({ type: "add_fillup", event: event })
+            fillupDispatch({ type: "add_fillup", event: event })
           }
         >
           <p>
@@ -50,13 +50,13 @@ function AddFillupForm(props) {
           </p>
           <input
             type="hidden"
-            name="vehicle_key"
-            value={props.vehicle_key}
+            name="vehicle_id"
+            value={props.vehicle_id}
           />
           <input type="submit" value="Add Refueling Expense" />
         </form>
       )}
-    </FillupDataContext.Consumer>
+    </DataContext.Consumer>
   );
 }
 

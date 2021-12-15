@@ -9,31 +9,42 @@ import React, { useReducer, useEffect } from 'react';
 import Modal from './Modal';
 import VehicleList from './VehicleList';
 import GlobalStats from './GlobalStats';
-import vehicles from '../vehicle-data.json';
-import { FillupDataContext, ModalContext, initialModalState } from './contexts';
-import { vehicleReducer, modalReducer } from './reducers';
+import vehicles from '../initial-data.json';
+import fillups from '../initial-data.json';
+import { DataContext, ModalContext, initialModalState } from './contexts';
+import { vehicleReducer, modalReducer, fillupReducer } from './reducers';
 
 function App() {
-  const raw_localstorage = localStorage.getItem('vehicles');
+  const raw_ls_vehicles = localStorage.getItem('vehicles');
+  const raw_ls_fillups = localStorage.getItem('fillups');
 
   const [modalState, modalDispatch] = useReducer(modalReducer, initialModalState);
   const [vehicleState, vehicleDispatch] = useReducer(
     vehicleReducer,
-    JSON.parse(raw_localstorage) || vehicles,
+    JSON.parse(raw_ls_vehicles) || vehicles,
+  );
+  const [fillupState, fillupDispatch] = useReducer(
+    fillupReducer,
+    JSON.parse(raw_ls_fillups) || fillups,
   );
 
   useEffect(() => {
     localStorage.setItem('vehicles', JSON.stringify(vehicleState));
   }, [vehicleState]);
+  useEffect(() => {
+    localStorage.setItem('fillups', JSON.stringify(fillupState));
+  }, [fillupState]);
 
   return (
-    <FillupDataContext.Provider value={{vehicleState, vehicleDispatch}}>
+    <DataContext.Provider value={
+      {vehicleState, vehicleDispatch, fillupState, fillupDispatch}
+    }>
       <GlobalStats />
       <ModalContext.Provider value={{modalState, modalDispatch}}>
         <VehicleList />
         <Modal />
       </ModalContext.Provider>
-    </FillupDataContext.Provider>
+    </DataContext.Provider>
   );
 }
 

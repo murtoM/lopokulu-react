@@ -25,3 +25,10 @@ export const roundToPrecision = (value, targetPrecision) => {
     let decimalsRemoved = Math.round(parseFloat(value + 'e' + targetPrecision));
     return Number(decimalsRemoved + 'e-' + targetPrecision);
 }
+
+/**
+ * Get fillups for specific vehicle
+ */
+export const getFillupsForVehicle = (state, vehicleId) => {
+  return state.fillups.filter(fillup => fillup.vehicle_id === vehicleId);
+}
