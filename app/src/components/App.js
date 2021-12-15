@@ -9,8 +9,7 @@ import React, { useReducer, useEffect } from 'react';
 import Modal from './Modal';
 import VehicleList from './VehicleList';
 import GlobalStats from './GlobalStats';
-import { vehicles } from '../initial-data.json';
-import { fillups } from '../initial-data.json';
+import { vehicles, fillups } from '../initial-data.json';
 import { DataContext, ModalContext, initialModalState } from './contexts';
 import { vehicleReducer, modalReducer, fillupReducer } from './reducers';
 
