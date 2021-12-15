@@ -36,7 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## License
 
-The programming code is licensed under the MIT license. The up-to-date
-licensing and copyright information can be found on each file's header or in a
-separate .license file.
+lopokulu-react is free and open source software. The programming code is
+licensed under the MIT license. The up-to-date licensing and copyright
+information can be found on each file's header or in a separate .license file.
 
