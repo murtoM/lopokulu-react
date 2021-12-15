@@ -21,6 +21,7 @@ class VehicleList extends React.Component {
         {vehicleState.vehicles.map((vehicle, i) => (
           <Vehicle
             key={i}
+            vehicle_key={i}
             name={vehicle.name}
             register_number={vehicle.register_number}
             fillups={vehicle.fillups}
